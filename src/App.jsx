@@ -6,6 +6,7 @@ import UseContext from "./UseContext"
 import UseCallback from "./useCallback/UseCallback"
 import UseMemo from "./useMemo/UseMemo"
 import UseSelector from "./UseSelector"
+import Routing from "./routing/Routing"
 
 const App = () => {
 
@@ -23,6 +24,8 @@ const App = () => {
       <UseMemo />
 
       <UseSelector />
+
+      <Routing />
     </div>
   )
 }
