@@ -5,6 +5,7 @@ import GlobalContextProvider from "./context/GlobalContextProvider"
 import UseContext from "./UseContext"
 import UseCallback from "./useCallback/UseCallback"
 import UseMemo from "./useMemo/UseMemo"
+import UseSelector from "./UseSelector"
 
 const App = () => {
 
@@ -20,6 +21,8 @@ const App = () => {
 
       <UseCallback />
       <UseMemo />
+
+      <UseSelector />
     </div>
   )
 }
