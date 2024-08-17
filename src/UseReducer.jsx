@@ -5,7 +5,15 @@ const UseReducer = () => {
 
     const initialState = {
         name: "Samir Nayakawadi",
-        city: "Kolhapur"
+        city: "Kolhapur",
+        menus: {
+            currentSelectedMenu: "details",
+            menuData: {
+                details: {
+                    qualifiedName: "Details Page",
+                }
+            }
+        }
     }
 
     const reducerFunction = (prevState, actions) => {
@@ -14,6 +22,22 @@ const UseReducer = () => {
         }
         else if (actions.key === "city") {
             return { ...prevState, city: actions.value }
+        }
+        else if (actions.key === "qualifiedName") {
+            return {
+                ...prevState,
+                menus: {
+                    ...prevState.menus,
+                    menuData: {
+                        ...prevState.menus.menuData,
+                        details: {
+                            ...prevState.menus.menuData.details,
+                            qualifiedName: actions.value
+                        }
+
+                    }
+                }
+            }
         }
         else {
             return prevState
@@ -30,8 +54,22 @@ const UseReducer = () => {
         console.log("state", state)
     }, [state])
 
+    const updateFunction = () => {
+        setState({ key: "qualifiedName", value: "This is an Updated Detailed Page" })
+    }
+
+    const decreaseFunction = () => {
+        setState({ key: "qualifiedName", value: "This is an Updated Detailed Decreased Page" })
+    }
+
     return (
-        <div>State.name : {state.name}</div>
+        <div>
+            State.name : {state.name}
+            <br />
+            <button onClick={updateFunction}>Update Qualified Name</button>
+            <button onClick={decreaseFunction}>Decrease Qualified Name</button>
+            \<span>Qualified Name from useReducer : {state.menus.menuData.details.qualifiedName}</span>
+        </div>
     )
 }
 

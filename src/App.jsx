@@ -7,25 +7,27 @@ import UseCallback from "./useCallback/UseCallback"
 import UseMemo from "./useMemo/UseMemo"
 import UseSelector from "./UseSelector"
 import Routing from "./routing/Routing"
+import UseState from "./UseState.jsx"
 
 const App = () => {
 
   return (
     <div>
+      <UseState />
+      {/* <UseEffect /> */}
       <Reducer />
-      <UseEffect />
-      <UseRef />
+      {/* <UseRef /> */}
 
-      <GlobalContextProvider>
+      {/* <GlobalContextProvider>
         <UseContext />
-      </GlobalContextProvider>
+      </GlobalContextProvider> */}
 
-      <UseCallback />
-      <UseMemo />
+      {/* <UseCallback /> */}
+      {/* <UseMemo /> */}
 
-      <UseSelector />
+      {/* <UseSelector /> */}
 
-      <Routing />
+      {/* <Routing /> */}
     </div>
   )
 }
